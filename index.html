@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <ul>
+        <li style="--i:3"><a href="#" onclick="create_file()">create</a></li>
+        <li style="--i:2"><a href="#" onclick="update_file()">update</a></li>
+        <li style="--i:1"><a href="#" onclick="delete_file()">Delete</a></li>
+    </ul>
+    <script>
+        function create_file() {
+            var fs = require('fs');
+            fs.open("p1.txt", 'w', function (err, file) {
+                if (err) throw err;
+                console.log('Saved!');
+            });
+        }
+    </script>
+</body>
+
+</html>
